@@ -27,8 +27,7 @@ public class GuiaCollection_1 {
     public static void main(String[] args) {
 
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
-        ArrayList<String> rasas = new ArrayList();
-        Iterator<String> it = rasas.iterator();
+        ArrayList<String> rasas = new ArrayList();    
         System.out.println("Ingrese nombres de razas");
         while (true) {
             String raza = leer.next();
@@ -40,15 +39,14 @@ public class GuiaCollection_1 {
                 rasas.add(raza);
             }
             System.out.println("¿Desea salir?");
-
         }
+        Iterator<String> it = rasas.iterator();        
         System.out.println(rasas);
         Collections.sort(rasas);
-        System.out.println("Indique que perro desea eliminar de la lista");
+        System.out.println("Indique que perro desea eliminar de la lista");     
         String perro = leer.next();
-        while (it.hasNext()) {
-            String actual = it.next();
-            if (actual.equals(perro)) {
+        while (it.hasNext()) {            
+            if (it.next().equalsIgnoreCase(perro)) {
                 it.remove();
             }
         }
